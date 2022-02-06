@@ -3,49 +3,60 @@ package ru.netology.radio;
 public class Radio {
     private int currentChanel;
     private int currentVolume;
+    private int Chanel = 10;
 
-    public int getCurrentChanel() {
-       return currentChanel;
+    public Radio(int currentChanel, int currentVolume, int chanel) {
+        this.currentChanel = currentChanel;
+        this.currentVolume = currentVolume;
+        Chanel = chanel;
     }
 
-    public void setCurrentChanel(int currentChanel) {
+    public int getCurrentChanel() {
+        return currentChanel;
+    }
+
+
+    public void setChanel(int Chanel) {
+
         if (currentChanel < 0) {
-           currentChanel = 9;
+            currentChanel = 9;
         }
         if (currentChanel > 9) {
-           currentChanel = 0;
+            currentChanel = 0;
         }
         this.currentChanel = currentChanel;
     }
 
-    public void next() {
-            setCurrentChanel(currentChanel = currentChanel +1);
-        }
-
-        public void prev() {
-            setCurrentChanel(currentChanel = currentChanel -1);
-        }
-
-        public int getCurrentVolume() {
-            return currentVolume;
-        }
-
-        public void setCurrentVolume(int currentVolume) {
-            if (currentVolume <= 0) {
-                currentVolume = 0;
-            }
-            if (currentVolume >= 10) {
-                currentVolume = 10;
-            }
-            this.currentVolume = currentVolume;
-        }
-
-        public void up() {
-            setCurrentVolume(currentVolume = currentVolume +1);
-        }
-
-        public void down() {
-            setCurrentVolume(currentVolume = currentVolume -1);
-        }
+    public void next2() {
+        setChanel(currentChanel = currentChanel + 1);
     }
 
+    public void prev2() {
+        setChanel(currentChanel = currentChanel - 1);
+    }
+
+
+    public int getVolume() {
+        return currentVolume;
+    }
+
+    public void setVolume(int Volume) {
+        if (currentVolume <= 0) {
+            currentVolume = 0;
+        }
+        if (currentVolume >= 100) {
+            currentVolume = 100;
+        }
+        this.currentVolume = currentVolume;
+    }
+
+    public void up2() {
+        setVolume(currentVolume = currentVolume + 1);
+    }
+
+    public void down2() {
+        setVolume(currentVolume = currentVolume - 1);
+    }
+
+
+}
